@@ -1,0 +1,11 @@
+<h1 class="text-5xl self-center mb-6">Hello, rails!</h1>
+<h2 class="text-3xl mb-4">Blogs</h2>
+<ul>
+    <% @articles.each do |article| %>
+        <li class="text-lg no-underline text-blue-500 hover:text-blue-900 ml-2">
+            <%= link_to article.title, article %>
+        </li>
+    <% end %>
+</ul>
+
+<%= link_to "New Article", new_article_path, class: "px-6 py-2 mx-12 my-5 block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600 hover:bg-indigo-500 text-center" %>

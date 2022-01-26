@@ -1,0 +1,21 @@
+<%= form_with model: article do |form| %>
+  <div>
+    <%= form.label :title, class: "block mb-2 text-lg" %>
+    <%= form.text_field :title, class: "outline-none py-1 px-2 text-md border-2 rounded-md focus:bg-indigo-50 mb-3" %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :body, class: "block mb-2 text-lg" %>
+    <%= form.text_area :body, class: "w-full font-serif p-4 text-gray-600 bg-white focus:bg-indigo-50 outline-none rounded-md" %>
+     <% article.errors.full_messages_for(:body).each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit :Submit, class: "cursor-pointer px-6 py-2 my-5 block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600 hover:bg-indigo-500 text-center" %>
+  </div>
+<% end %>
